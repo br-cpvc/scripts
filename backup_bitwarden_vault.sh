@@ -37,10 +37,10 @@ backup_file=$backup_dir/bw_vault.gpg
 echo $json | gpg --pinentry-mode loopback -e -r $gpg_user_id --armor -o $backup_file
 echo "wrote file: $backup_file"
 
-json=$(bw export --format json --raw --organizationid $bw_org_id)
-backup_file=$backup_dir/bw_organization_vault.gpg
-echo $json | gpg --pinentry-mode loopback -e -r $gpg_user_id --armor -o $backup_file 
-echo "wrote file: $backup_file"
+#json=$(bw export --format json --raw --organizationid $bw_org_id)
+#backup_file=$backup_dir/bw_organization_vault.gpg
+#echo $json | gpg --pinentry-mode loopback -e -r $gpg_user_id --armor -o $backup_file 
+#echo "wrote file: $backup_file"
 
 bw lock
 
