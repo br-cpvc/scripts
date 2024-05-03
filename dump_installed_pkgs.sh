@@ -41,3 +41,9 @@ if [ -x "$(command -v flatpak)" ]; then
  echo "writing: $dstfile"
  flatpak list > $dstfile
 fi
+
+if [ -x "$(command -v nix-env)" ]; then
+ dstfile="$dstdir/nix-env.txt"
+ echo "writing: $dstfile"
+ sudo nix-env -qa --installed "*" > $dstfile
+fi
