@@ -4,10 +4,16 @@ dstdir="pkgs_installed/$ts"
 mkdir -p $dstdir
 echo "dumping to folder: $dstdir"
 
-if [ -x "$(command -v apt)" ]; then
- dstfile="$dstdir/apt.txt"
+#if [ -x "$(command -v apt)" ]; then
+# dstfile="$dstdir/apt.txt"
+# echo "writing: $dstfile"
+# apt list --installed > $dstfile
+#fi
+
+if [ -x "$(command -v apt-mark)" ]; then
+ dstfile="$dstdir/apt-mark.txt"
  echo "writing: $dstfile"
- apt list --installed > $dstfile
+ apt-mark showmanual > $dstfile
 fi
 
 if [ -x "$(command -v pip)" ]; then
