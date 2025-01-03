@@ -53,3 +53,9 @@ if [ -x "$(command -v nix-env)" ]; then
  echo "writing: $dstfile"
  sudo nix-env -qa --installed "*" > $dstfile
 fi
+
+if [ -x "$(command -v cargo)" ]; then
+ dstfile="$dstdir/cargo.txt"
+ echo "writing: $dstfile"
+ cargo install --list > $dstfile
+fi
