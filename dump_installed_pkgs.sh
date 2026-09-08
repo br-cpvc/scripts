@@ -33,7 +33,7 @@ fi
 if [ -x "$(command -v conda)" ]; then
  dstfile="$dstdir/conda.txt"
  echo "writing: $dstfile"
- conda env export --name base > $dstfile
+ conda env export -q --name base > $dstfile
 fi
 
 if [ -x "$(command -v snap)" ]; then
